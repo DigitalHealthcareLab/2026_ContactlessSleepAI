@@ -23,5 +23,7 @@ Notes
 * Figure 4 is drawn with matplotlib 3.8.4 (`PYB`) and the other figures with matplotlib 3.10.8 (`PY`); other
   matplotlib versions give the same content with slightly different rendering.
 * `huggingface_hub` is pinned below 1.0: timm 1.0.19 does not import with later versions.
+* `torch`, `torchvision` and `torchaudio` are the CUDA 12.4 builds (`+cu124`) from the PyTorch index, e.g.
+  `pip install -r environment/requirements-vit.txt --extra-index-url https://download.pytorch.org/whl/cu124`.
 * On CentOS 7 the analysis environment needs a newer `libgcc_s` than the system one for the pyarrow wheel that
   scikit-learn loads (e.g. `LD_LIBRARY_PATH` pointing to a conda `lib` directory).
