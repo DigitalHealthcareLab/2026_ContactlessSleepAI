@@ -6,7 +6,7 @@ Inclusion, applied in this order to the exam inventory (exams with synchronized 
   2. a matched report with an AHI
   3. not a daytime nap test (MSLT / MWT in the exam name)
   4. Hospital C (external): PSG night (date of the matched report) in 2025 or later
-  5. age >= 18 years
+  5. age >= 19 years
 Label (two axes): OSA = AHI >= 5; RBD = RBD status of the report impression "definite" or "probable"
   -> Normal, OSA-only, RBD-only, Both.
 Splits: data/cohort/splits.csv (uuid, split, fold). They were assigned once by stratified random sampling within
@@ -21,7 +21,7 @@ import pandas as pd
 
 from psgscreen import paths
 
-MIN_AGE = 18
+MIN_AGE = 19
 EXTERNAL_FROM_YEAR = 2025
 NAP = r"MSLT|MLST|MWT"
 

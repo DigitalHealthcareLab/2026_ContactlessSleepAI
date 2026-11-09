@@ -68,14 +68,14 @@ from `scripts/run_all.sh`, e.g. `python -m psgscreen.model.disorder`; `-h` lists
 | `PSG_DATA/…` | Content |
 |---|---|
 | `video/<centre>/…/<exam folder>/*.avi` | PSG video files of an exam (the folder name contains the exam uuid) |
-| `annotation_exports/<centre>/` | Scoring exports: NeuroWorks `.txt` (Hospitals A and B), Xltek `.ent` / `.erd` (Hospital C) |
+| `annotation_exports/<centre>/` | Scoring exports: NeuroWorks `.txt` (Sinchon and Gangnam Severance), Xltek `.ent` / `.erd` (Yongin Severance) |
 | `reports/<centre>/` | PSG report files (`.doc` / `.docx`) |
 | `cohort/exam_inventory.csv` | `uuid, exam_id, center, exam_date, exam_month`: exams with synchronized video and audio |
 | `cohort/exclusions.csv` | `uuid, reason`: failed quality review, PAP-treated or split-night studies |
 | `cohort/splits.csv` | `uuid, split, fold`: internal test (`test`) or development (`dev`, folds 0–9) |
-| `cohort/yi_questionnaires/` | Hospital C questionnaire exports for RBDSQ scores missing from the report |
+| `cohort/yi_questionnaires/` | Yongin Severance questionnaire exports for RBDSQ scores missing from the report |
 
-Centre codes: `SC` = Hospital A, `GN` = Hospital B, `YI` = Hospital C.
+Centre codes: `SC` = Sinchon Severance, `GN` = Gangnam Severance, `YI` = Yongin Severance.
 
 </details>
 
