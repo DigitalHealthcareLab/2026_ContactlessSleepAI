@@ -15,7 +15,6 @@ Kyung Min Kim<sup>4,\*</sup>, Yu Rang Park<sup>1,\*</sup>
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 ![Python 3.10](https://img.shields.io/badge/Python-3.10-3776AB.svg)
 ![PyTorch 2.4](https://img.shields.io/badge/PyTorch-2.4-EE4C2C.svg)
-![XGBoost 3.2](https://img.shields.io/badge/XGBoost-3.2-189FDD.svg)
 
 </div>
 
