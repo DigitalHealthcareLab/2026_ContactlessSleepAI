@@ -1,4 +1,4 @@
-# PYB: report parsing and matching, clinical metrics, Figure 3 (Python 3.12.4)
+# PYB: report parsing and matching, clinical metrics, Figure 4 (Python 3.12.4)
 numpy==1.26.4
 pandas==2.2.2
 scipy==1.13.1
