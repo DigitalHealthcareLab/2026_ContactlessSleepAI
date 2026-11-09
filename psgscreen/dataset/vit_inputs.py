@@ -14,9 +14,9 @@ Video (3 x 30 x 64 x 64 uint8 per window), from the raw optical flow of the wind
 Audio (128 x 469 float16 per window): the clip's log-Mel spectrogram (dB), frames [0, 938) at 31.25 Hz (missing
   frames = 0), averaged over pairs of frames (64 ms); the number of valid pooled frames is stored with it.
 
-    python -m psgscreen.dataset.vit_inputs rows --center INT
-    python -m psgscreen.dataset.vit_inputs video --center INT [--workers 4]
-    python -m psgscreen.dataset.vit_inputs audio --center INT
+    python -m psgscreen.dataset.vit_inputs rows --center SC
+    python -m psgscreen.dataset.vit_inputs video --center SC [--workers 4]
+    python -m psgscreen.dataset.vit_inputs audio --center SC
         -> vit_inputs/<centre>/{rows.npz, video_u8.npy, video_status.npy, audio_f16.npy, audio_valid.npy}
 """
 import argparse
@@ -96,7 +96,7 @@ class FlowSource:
         import zstandard as zstd
         self.env = lmdb.open(flow_lmdb, readonly=True, lock=False, readahead=False, max_readers=256,
                              subdir=os.path.isdir(flow_lmdb))
-        self.tables = {} if center == "INT" else tables
+        self.tables = {} if center == "SC" else tables
         self.zstd = zstd
         self.local = threading.local()
         self.cache = OrderedDict()                   # neighbouring windows share clips when the clocks drift

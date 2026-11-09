@@ -50,7 +50,7 @@ def main():
     os.makedirs(OUT, exist_ok=True)
     use_fonts()
     T = pd.read_csv(f"{paths.RESULTS}/trajectory_5min.csv", encoding="utf-8-sig")
-    T = T[T.center == "INT"].copy()
+    T = T[T.center == "SC"].copy()
     T["uuid"] = T.exam_id.astype(str).str.split("_").str[-1].str.lower()
     C = pd.read_csv(f"{paths.RESULTS}/clinical/table_optimal_threshold.csv", encoding="utf-8-sig").set_index(["Task", "Cohort"])
     thr = {g: float(C.loc[(t, "Internal test"), "Threshold"]) for g, t in TASK.items()}

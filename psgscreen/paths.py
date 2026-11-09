@@ -11,8 +11,8 @@ import os
 DATA = os.environ.get("PSG_DATA", "data")
 WORK = os.environ.get("PSG_WORK", "work")
 
-INTERNAL = ("INT", "GN")      # development + locked internal test
-EXTERNAL = ("YI",)            # external validation
+INTERNAL = ("SC", "GN")      # development + locked internal test (Hospital A = SC, Hospital B = GN)
+EXTERNAL = ("YI",)            # external validation (Hospital C)
 CENTERS = INTERNAL + EXTERNAL
 N_FOLDS = 10
 SEED = 42

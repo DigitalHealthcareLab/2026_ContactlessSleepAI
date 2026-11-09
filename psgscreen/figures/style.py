@@ -11,7 +11,7 @@ COHORT_LS = {"Internal": "-", "External": (0, (5, 2))}
 MODALITY = {"Audio": "#D55E00", "Video": "#166082"}
 FUSED = "#54278f"
 NEUTRAL = "#8f8d87"
-DISPLAY_CENTER = {"INT": "Hospital A", "GN": "Hospital B", "YI": "Hospital C"}
+DISPLAY_CENTER = {"SC": "Hospital A", "GN": "Hospital B", "YI": "Hospital C"}
 
 
 def use_fonts():

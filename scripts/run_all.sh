@@ -17,10 +17,10 @@ M="-m psgscreen"
 # Part of Hospital A was processed with the denseflow tool instead of optical_flow: denseflow (Docker image
 # jinyong/denseflow:batch2048_umask_fps5, options -s=1 -b=20 -cf -v -a=farn) on each video, then
 #   $PY $M.preprocessing.denseflow_lmdb --root <denseflow output>
-$PYF  $M.preprocessing.optical_flow --center INT --decoder pyav
+$PYF  $M.preprocessing.optical_flow --center SC --decoder pyav
 $PYF  $M.preprocessing.optical_flow --center GN --decoder pyav
 $PYFC $M.preprocessing.optical_flow --center YI --decoder opencv
-for C in INT GN YI; do
+for C in SC GN YI; do
   $PYP $M.preprocessing.motion --center $C
   $PYP $M.preprocessing.audio --center $C
   $PY  $M.preprocessing.annotations --center $C
@@ -32,16 +32,16 @@ $PYB $M.cohort.report_table
 $PY  $M.cohort.roster
 
 # ---- 3. windows, ViT inputs, event traces ----
-$PY $M.dataset.clip_times --center INT --source motion
+$PY $M.dataset.clip_times --center SC --source motion
 $PY $M.dataset.clip_times --center GN --source video
 $PY $M.dataset.clip_times --center YI --source video
-for C in INT GN YI; do $PY $M.dataset.windows --center $C; done
-$PY $M.dataset.windows --center INT --no_annotation
-for C in INT GN YI; do
+for C in SC GN YI; do $PY $M.dataset.windows --center $C; done
+$PY $M.dataset.windows --center SC --no_annotation
+for C in SC GN YI; do
   for S in rows video audio; do $PYV $M.dataset.vit_inputs $S --center $C; done
 done
 $PY $M.dataset.hypnogram
-for C in INT GN; do
+for C in SC GN; do
   $PY $M.dataset.event_traces --center $C
   $PY $M.dataset.event_traces --center $C --events hypopnea --name hypopnea
 done

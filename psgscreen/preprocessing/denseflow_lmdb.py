@@ -7,7 +7,7 @@ padded with 128 (zero flow) to 150 fields; clip indices run on across the videos
 Exams with fewer than 100 video folders are skipped. Record: key "<exam folder>_<clip:04d>", zstd of the .npy
 array (150 x 256 x 256 x 2, uint8).
 
-    python -m psgscreen.preprocessing.denseflow_lmdb --root <denseflow output>      (writes flow_INT.lmdb)
+    python -m psgscreen.preprocessing.denseflow_lmdb --root <denseflow output>      (writes flow_SC.lmdb)
 """
 import argparse
 import glob
@@ -53,7 +53,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--root", required=True, help="denseflow output: <root>/<exam folder>/<video folder>/")
     a = ap.parse_args()
-    env = lmdb.open(paths.lmdb("flow", "INT"), map_size=int(5e12))
+    env = lmdb.open(paths.lmdb("flow", "SC"), map_size=int(5e12))
     for exam_dir in sorted(glob.glob(f"{a.root}/*")):
         videos = sorted(glob.glob(f"{exam_dir}/*"))
         if len(videos) < MIN_VIDEOS:

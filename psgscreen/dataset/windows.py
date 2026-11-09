@@ -14,7 +14,7 @@ taken from the clips that overlap it on the recording clock; otherwise the clip 
 Agreement: Hospital B, table rows within 2 of the number of motion records; Hospital C, table rows within 2 of the
 highest motion clip index + 1, and the shorter last clip of each video file counts with its own samples.
 
-    python -m psgscreen.dataset.windows --center INT [--no_annotation] [--workers 6]
+    python -m psgscreen.dataset.windows --center SC [--no_annotation] [--workers 6]
         -> windows/<centre>/windows_meta.npz   (--no_annotation: windows_noann_meta.npz, all targets -1)
 """
 import argparse
@@ -172,7 +172,7 @@ def aligned(store, table, key, read, kind):
 def clip_tables(center, store):
     """Clip-time tables that agree with the motion database (see the module docstring)."""
     p = paths.clip_times(center)
-    if center == "INT" or not os.path.exists(p):
+    if center == "SC" or not os.path.exists(p):
         return {}
     z, counts = np.load(p), store.motion_clip_counts(index_span=center in GATE_SPAN)
     return {u: z[u] for u in z.files if u in counts and abs(len(z[u]) - counts[u]) <= GATE}
@@ -225,7 +225,7 @@ def main():
     inv = pd.read_csv(paths.INVENTORY, encoding="utf-8-sig")
     inv = inv[inv.center == a.center]
     # exams are processed in the order of their name in the feature databases (A: exam name, B, C: uuid)
-    name = dict(zip(inv.uuid.str.lower(), inv.exam_id.astype(str) if a.center == "INT" else inv.uuid.str.lower()))
+    name = dict(zip(inv.uuid.str.lower(), inv.exam_id.astype(str) if a.center == "SC" else inv.uuid.str.lower()))
 
     events, d = {}, os.path.join(paths.ANNOTATIONS, a.center)
     for f in sorted(os.listdir(d)):

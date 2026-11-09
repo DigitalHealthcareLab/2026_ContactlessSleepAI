@@ -9,7 +9,7 @@
 Events are ordered by their fold-mean audio fusion weight in a and b. Each panel is drawn at twice its size in the
 final layout, saved at 300 dpi and tagged 600 dpi; letters and placement were added by hand.
 Inputs: results/detection_perfold_summary.csv (evaluation.detection), models/fusion/f*/fusion_report.csv,
-traces/traces_{INT,GN}.npz and traces/traces_hypopnea_{INT,GN}.npz (dataset.event_traces).
+traces/traces_{SC,GN}.npz and traces/traces_hypopnea_{SC,GN}.npz (dataset.event_traces).
 
     python -m psgscreen.figures.event_detection [a b c d]
 """

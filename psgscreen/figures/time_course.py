@@ -68,7 +68,7 @@ def sustained_first(ok, tt):
 
 def load_trajectories():
     T = pd.read_csv(f"{paths.RESULTS}/trajectory_5min.csv", encoding="utf-8-sig")
-    T = T[T.center == "INT"].copy()
+    T = T[T.center == "SC"].copy()
     T["exam_id"] = T["exam_id"].astype(str)
     T["uuid"] = T.exam_id.str.split("_").str[-1].str.lower()
     return T

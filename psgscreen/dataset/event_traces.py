@@ -12,8 +12,8 @@ Traces need >= 90 % coverage by audio, motion and flow-histogram data. Exams are
 of the annotation folder; random draws: numpy default_rng(42) for A, (43) for B.
 Two draws are used by the figure: the default event list and, separately (its own random stream), hypopnea.
 
-    python -m psgscreen.dataset.event_traces --center INT                          -> traces/traces_<centre>.npz
-    python -m psgscreen.dataset.event_traces --center INT --events hypopnea --name hypopnea
+    python -m psgscreen.dataset.event_traces --center SC                          -> traces/traces_<centre>.npz
+    python -m psgscreen.dataset.event_traces --center SC --events hypopnea --name hypopnea
                                                                                     -> traces/traces_hypopnea_<centre>.npz
 """
 import argparse
@@ -118,8 +118,8 @@ def main():
     print(f"{c}: {len(clips)} development exams with aligned video, {len(ann)} with these events")
 
     frac = {}
-    if c != "INT":                                            # the fractions drawn from the Hospital A pools
-        frac = json.loads(str(np.load(f"{paths.TRACES}/traces{tag}_INT.npz")["cfg"]))["fraction"]
+    if c != "SC":                                            # the fractions drawn from the Hospital A pools
+        frac = json.loads(str(np.load(f"{paths.TRACES}/traces{tag}_SC.npz")["cfg"]))["fraction"]
     rng = np.random.default_rng(SEED + paths.INTERNAL.index(c))
     recs, drawn = [], {}
     for e in events:

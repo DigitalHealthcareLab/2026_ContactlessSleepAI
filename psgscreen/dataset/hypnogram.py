@@ -71,9 +71,9 @@ def fill_gaps(ep, st):
 
 
 def main():
-    d = f"{paths.ANNOTATION_EXPORTS}/INT"
+    d = f"{paths.ANNOTATION_EXPORTS}/SC"
     inv = pd.read_csv(paths.INVENTORY, encoding="utf-8-sig")
-    want = set(inv.loc[inv.center == "INT", "uuid"].str.lower())
+    want = set(inv.loc[inv.center == "SC", "uuid"].str.lower())
     rows = []
     for f in sorted(os.listdir(d)):
         u = uuid_of(f)
