@@ -1,0 +1,22 @@
+{
+ "OSA": {
+  "colsample_bytree": 0.8,
+  "eta": 0.2,
+  "gamma": 1.0,
+  "max_depth": 2,
+  "min_child_weight": 3,
+  "reg_lambda": 1.0,
+  "spw": "full",
+  "subsample": 1.0
+ },
+ "RBD": {
+  "colsample_bytree": 0.5,
+  "eta": 0.05,
+  "gamma": 1.0,
+  "max_depth": 8,
+  "min_child_weight": 1,
+  "reg_lambda": 1.0,
+  "spw": "full",
+  "subsample": 0.6
+ }
+}

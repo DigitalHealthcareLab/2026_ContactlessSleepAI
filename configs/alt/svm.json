@@ -1,0 +1,17 @@
+{
+ "Abnormal": {
+  "model": "svm",
+  "C": 100.0,
+  "gamma_mult": 0.1
+ },
+ "OSA": {
+  "model": "svm",
+  "C": 1.0,
+  "gamma_mult": 0.1
+ },
+ "RBD": {
+  "model": "svm",
+  "C": 100.0,
+  "gamma_mult": 0.1
+ }
+}

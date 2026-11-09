@@ -1,0 +1,14 @@
+{
+ "Abnormal": {
+  "model": "lr",
+  "C": 1.0
+ },
+ "OSA": {
+  "model": "lr",
+  "C": 0.01
+ },
+ "RBD": {
+  "model": "lr",
+  "C": 0.1
+ }
+}

@@ -1,0 +1,7 @@
+# PYP: audio Mel spectrogram, motion features (Python 3.10.8, GPU for the Mel spectrogram)
+torch==2.4.1+cu124
+torchaudio==2.4.1+cu124
+librosa==0.11.0
+numpy==2.2.6
+lmdb==1.7.5
+zstandard==0.25.0

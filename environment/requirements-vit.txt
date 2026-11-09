@@ -1,0 +1,12 @@
+# PYV: ViT input arrays and event detectors (Python 3.10.8, GPU for training and prediction)
+torch==2.4.1+cu124
+torchvision==0.19.1+cu124
+timm==1.0.19
+huggingface_hub==0.34.4
+numba==0.61.2
+numpy==2.2.6
+opencv-python==4.13.0.92
+pandas==2.3.3
+scikit-learn==1.7.2
+lmdb==1.7.5
+zstandard==0.25.0

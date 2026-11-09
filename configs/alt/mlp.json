@@ -1,0 +1,25 @@
+{
+ "Abnormal": {
+  "model": "mlp",
+  "hidden": [
+   32
+  ],
+  "alpha": 0.01
+ },
+ "OSA": {
+  "model": "mlp",
+  "hidden": [
+   64,
+   32
+  ],
+  "alpha": 0.01
+ },
+ "RBD": {
+  "model": "mlp",
+  "hidden": [
+   64,
+   32
+  ],
+  "alpha": 0.1
+ }
+}

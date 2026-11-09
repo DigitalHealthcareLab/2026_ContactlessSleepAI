@@ -1,0 +1,17 @@
+{
+ "Abnormal": {
+  "model": "rf",
+  "min_samples_leaf": 1,
+  "max_features": "sqrt"
+ },
+ "OSA": {
+  "model": "rf",
+  "min_samples_leaf": 20,
+  "max_features": "sqrt"
+ },
+ "RBD": {
+  "model": "rf",
+  "min_samples_leaf": 1,
+  "max_features": "sqrt"
+ }
+}

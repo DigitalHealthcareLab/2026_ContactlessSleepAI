@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.DS_Store
+
+# Patient data, derived arrays, model weights and outputs are never part of the repository
+# (PSG_DATA / PSG_WORK default to ./data and ./work).
+data/
+work/
+*.lmdb
+*.npy
+*.npz
+*.pt
+*.pth
+*.parquet
+*.csv
+*.xlsx
